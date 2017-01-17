@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>liooil</title>
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="/VR_webStuff/room+11/js/aframe-hyperlink.js"></script>
+    <script src="/VR_webStuff/room+11/js/sw-load.js" data-service-worker="sw.js" data-service-worker-scope="./"></script>
+    
+    <link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+  </head>
+  <body>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+      
+      body{
+        font-family: helvetica;
+        }  
+        
+      .main{
+        display: flex;
+        height: 100%;
+        }
+      
+      .sidebar{
+        position: absolute;
+        max-width: 400px;
+        max-height: 600px;
+        overflow-x: hidden;
+		
+		width: 260px;
+        z-index: 2;
+
+        }
+      .sidebar__wrap{
+        width: 85%;
+        position: relative;
+        overflow-y: auto;
+        padding: 5%;
+        /*border: 2px solid white;
+        background: #ff00ff;
+        opacity: 0.5;*/
+        left: 10%;
+        }
+/*     .sidebar__wrap__inner{
+       	margin: auto;
+       } */
+       .PIMG-title{
+       	font-size: 125%;
+       }
+       .menu__list{
+       	margin: .2%;
+       } 
+       .page-title{
+       	font-size: 2em;
+       	color: white;
+       	font-weight: 100;
+       	letter-spacing: 0.02em;
+       	text-align: center;
+       }
+       .subnav{
+       	margin: .1em;
+       	list-style-type: none;
+       }
+
+       li{
+       	color: white;
+       	border: 2px solid white;
+       	margin: 1em;
+       	padding: .5em;
+       	text-align: left;
+       }
+
+       a{
+       	font-size: 1.1em;
+       	letter-spacing: 3px;
+       	color: white;
+       	text-decoration: none;
+       }
+
+    </style>
+    <main id="main" class="main">
+      <aside class="sidebar">
+        <div class="sidebar__wrap">
+          <div class="sidebar__wrap__inner">
+            <header class="PIMG-title">
+              <h2 class="page-title">P I M G</h2>
+            </header>
+            <div class="menu__list">
+<!--             	<h2 class="page-title">Explore</h2>
+ -->            	<ul class="subnav">
+            		<li id="about"><a href="https://liooil.space">About</a></li>
+            		<li><a href="#">Work</a></li>
+            		<li><a href="#">Members</a></li>
+            		<li><a href="#">Events</a></li>
+            		<li><a href="#">Exhibitions / Awards</a></li>
+            		<li><a href="#">Gear</a></li>
+            		<li><a href="#">Friends</a>	</li>
+            		<li><a href="#">Contact</a>	</li>
+            	</ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+    
+    
+    <!--EXAMPLE IFRAME-->
+      <div id="vr-container">
+      <i-frame id="vr-iframe" class="vr__iframe" allowfullscreen="yes" scrolling="no" allowvr="yes" src="https://aframe.io/aframe/examples/boilerplate/360-video/" width="100%" height="100%">
+      	
+      	<!DOCTYPE html>
+      	<html class="a-html">
+	      	<head>
+	      		<title>PIMG</title>
+	      	</head>
+	      	<body>
+	      	
+	        <a-scene vr-mode-ui="enabled: true">
+	          <a-assets>
+	            <video id="vid" src="vids/pimg-homepage.mp4" autoplay loop crossorigin></video>
+	            <img id="PIMG-title" src="images/PIMG.png">
+	            <img id="PIMG-logo" src="images/pimg-logo-full.png">
+	          </a-assets>
+	          
+	          <a-image src="#PIMG-title" width="12" position="0 5.5 -7.32" rotation="" scale="1.1 2.1 1.1"></a-image>
+	          <a-image src="#PIMG-logo" width="12" position="0 3 -6.72" rotation="" scale="1 1.5 1"></a-image>
+	          
+	          
+	            <a-entity position="0 0.75 0" camera look-controls wasd-controls>
+	              <a-cursor material="color: red; shader: flat"></a-cursor>
+	            </a-entity>
+	          
+	          <a-videosphere src="#vid" rotation="0 -80 0"></a-videosphere>
+	        </a-scene>
+	    	</body>
+	    </html>	
+	 
+      </i-frame>
+    </div>
+    </main>
+  </body>
+</html>
+
