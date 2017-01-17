@@ -1,0 +1,98 @@
+/*PIMG.css*/
+      @font-face {
+          font-family: Orator;
+          src: url(fonts/oratorStd.otf);
+      }
+
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+      
+      body{
+        font-family: helvetica;
+        }  
+
+      li{
+       	color: white;
+       	border: 2px solid white;
+       	margin: 1em;
+       	padding: .5em;
+       	text-align: left;
+       }
+
+       a{
+       	font-size: 1.1em;
+       	letter-spacing: 3px;
+       	color: white;
+       	text-decoration: none;
+       	text-shadow: 1px 1px #000;
+       }
+       a:hover{
+       	font-size: 1.13em;
+       	color:#32004b;
+       }
+        
+      .main{
+        display: flex;
+        height: 100%;
+        }
+      
+      .sidebar{
+        position: absolute;
+        max-width: 500px;
+        max-height: 600px;
+        overflow-x: hidden;
+		font-family: Orator;
+		width: 260px;
+        z-index: 2;
+
+        }
+      .sidebar__wrap{
+        width: 95%;
+        position: relative;
+        overflow-y: auto;
+        padding: 5%;
+        /*border: 2px solid white;
+        background: #ff00ff;
+        opacity: 0.5;*/
+        left: 10%;
+        }
+/*     .sidebar__wrap__inner{
+       	margin: auto;
+       } */
+       .PIMG-title{
+       	font-size: 125%;
+        
+       }
+       .menu__list{
+       	margin: .2%;
+       } 
+       .page-title{
+       	font-size: 2em;
+       	color: white;
+       	font-weight: 100;
+       	letter-spacing: 0.02em;
+       	text-align: center;
+       	z-index: 2;
+       }
+       .subnav{
+       	margin: .1em;
+       	list-style-type: none;
+       }
+
+/*WORK PAGE*/
+		.section__container{
+			position:absolute;
+			max-width: 70%;
+			max-height: 90%;
+			z-index: 2;
+			top:10%;
+			left: 20%;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+		.work__container{
+			
+		}
