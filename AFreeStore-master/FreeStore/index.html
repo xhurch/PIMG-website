@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>lio - gallery - oil</title>
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="js/aframe-travel-component.js"></script>
+    <script src="js/aframe-animation-component.js"></script>
+    <script src="/js/aframe-hyperlink.js"></script>
+    <script src="/js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script>
+    
+    <!--PRELOAD & PREFETCH-->
+    <!--ANGEL-->
+    <!--<link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2"> -->
+
+  </head>
+  <body>
+
+    <a-scene travel-node-default="axis: x,y,z; offsetZ: 5;" fog="">
+    
+<!--ASSETS-->
+        <a-assets>
+          <!-- TELEPORTER -->
+          <a-asset-item id="pyramid" src="models/liooil-tele-02.dae"></a-asset-item>
+          
+          <!--FREE STORE ASSETS-->
+          <a-asset-item id="angel" src="models/AngelWings.dae"></a-asset-item>
+
+          <!--SIGNS-->
+          <img id="info" src="images/sign05.png">
+        </a-assets>
+        
+        
+<!--ENTITIES-->
+
+<!--AAA // TELEPORT PYRAMIDS \\ AAA-->
+        <a-entity id="node-move" position="-24.94 3.61 3.22" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move"></a-entity>
+        <a-entity id="node-move" position="-54.27 3.61 -0.57" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" rotation="0 0 0" visible="true"></a-entity>
+        
+<!--AAA // WONDERS \\ AAA-->
+        <a-entity id="STRUCTURE_" position="-54.27 -0.11 0">
+         
+          <!-- VISUAL ARCHITECTURE -->
+          <a-entity position="0 0 0" scale="10 0.5 10" geometry="primitive:cylinder" material=""></a-entity>
+          <a-entity position="0 0 0" scale="5 5 5" geometry="primitive:torus;radius:3.24" material="" rotation="0 90 0" visible="true"></a-entity>
+          <a-entity position="0 0 0" scale="2 2 0.5" geometry="primitive:torus;radius:3.24" material="" rotation="90 0 0" visible="true"></a-entity>
+          <a-entity position="0 0 0" scale="2.5 2.5 4" geometry="primitive:torus;radius:4;radiusTubular:0.1;arc:360" material="" rotation="90 0 0" visible="true"></a-entity>
+
+          <!--INFO-->
+          <a-curvedimage src="#info" height="3.0" radius="5.7" theta-length="72" rotation="0 -125 0" scale="2 2 2" material="color:#FFF;shader:flat;side:double;transparent:true;repeat:-1 1;src:#info" geometry="height:3.0;primitive:cylinder;radius:5.7;segmentsRadial:48;thetaLength:72;openEnded:true;thetaStart:0" position="-5.83 4.5 0"></a-curvedimage>
+          
+        
+          <!--ITEMS-->
+          <a-entity id="ITEMS_" position="-54.27 -0.11 0">
+          <a-entity collada-model="#angel" position="54.5 1.75 -5" scale="0.15 0.15 0.15" ></a-entity> 
+          <!--<a-entity collada-model="#chair" position="0 0.67 7.57" scale="0.15 0.15 0.15" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e"></a-entity> -->
+            <!--https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2-->
+          <!--<a-entity collada-model="#chicken" position="0 0.67 -7.57" scale="0.15 0.15 0.15"></a-entity> -->
+            <!--https://sketchfab.com/models/db5af30382ef40bb8622f65ea0beafc0#  -->
+        </a-entity>
+      </a-entity>
+  
+<!--AAA // CAMERA \\ AAA-->
+        <a-entity position="-5 0.75 5" rotation="0 90 0" camera look-controls wasd-controls>
+            <a-cursor material="color: red; shader: flat"></a-cursor>
+        </a-entity>
+        <a-sky color="#000"></a-sky>
+    </a-scene>
+  </body>
+</html>
