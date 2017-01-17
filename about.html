@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>P I M G</title>
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-    <script src="/VR_webStuff/room+11/js/aframe-hyperlink.js"></script>
-    <script src="/VR_webStuff/room+11/js/sw-load.js" data-service-worker="sw.js" data-service-worker-scope="./"></script>
-    
-    <link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
-    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
-  </head>
+	<head>
+		<title>A B O U T</title>
+		<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+	</head>
   <body>
     <style>
       @font-face {
-          font-family: Orator;
-          src: url(fonts/oratorStd.otf);
-      }
-
+        font-family: Orator;
+        src: url(fonts/oratorStd.otf);
+      }	
       *{
         margin: 0;
         padding: 0;
@@ -37,8 +30,8 @@
         max-width: 400px;
         max-height: 600px;
         overflow-x: hidden;
-		    font-family: Orator;
-		    width: 260px;
+		font-family: Orator;
+		width: 260px;
         z-index: 2;
 
         }
@@ -57,7 +50,6 @@
        } */
        .PIMG-title{
        	font-size: 125%;
-        
        }
        .menu__list{
        	margin: .2%;
@@ -88,27 +80,33 @@
        	color: white;
        	text-decoration: none;
        }
+       /*li a:hover{
+       	background:white;
+       	color: black;
+       }*/
 
     </style>
     <main id="main" class="main">
       <aside class="sidebar">
         <div class="sidebar__wrap">
           <div class="sidebar__wrap__inner">
-            <a href="index.html"><header class="PIMG-title">
-              <h2 class="page-title">P I M G</h2>
-            </header></a>
+          	<a href="index.html">
+	            <header class="PIMG-title">
+	              <h2 class="page-title">P I M G</h2>
+	            </header>
+	        </a>    
             <div class="menu__list">
 <!--             	<h2 class="page-title">Explore</h2>
- -->          <ul class="subnav">
-                <li id="about"><a href="about.html">About</a></li>
-                <li id="work"><a href="work.html">Work</a></li>
-                <li id="members"><a href="members.html">Members</a></li>
-                <li id="events"><a href="events.html">Events</a></li>
-                <li id="ex-aw"><a href="exhibitions-awards.html">Exhibitions / Awards</a></li>
-                <li id="gear"><a href="gear.html">Gear</a></li>
-                <li id="friends"><a href="friends.html">Friends</a></li>
-                <li id="contact"><a href="contact.html">Contact</a></li>
-              </ul>
+ -->            <ul class="subnav">
+            		<li id="about"><a href="about.html">About</a></li>
+            		<li id="work"><a href="work.html">Work</a></li>
+            		<li id="members"><a href="members.html">Members</a></li>
+            		<li id="events"><a href="events.html">Events</a></li>
+            		<li id="ex-aw"><a href="exhibitions-awards.html">Exhibitions / Awards</a></li>
+            		<li id="gear"><a href="gear.html">Gear</a></li>
+            		<li id="friends"><a href="friends.html">Friends</a></li>
+            		<li id="contact"><a href="contact.html">Contact</a></li>
+            	</ul>
             </div>
           </div>
         </div>
@@ -128,13 +126,13 @@
 	      	
 	        <a-scene vr-mode-ui="enabled: true">
 	          <a-assets>
-	            <video id="vid" src="vids/pimg-homepage.mp4" autoplay loop crossorigin></video>
+	            <video id="vid" src="vids/leafblowerman.mp4" autoplay loop crossorigin></video>
 	            <img id="PIMG-title" src="images/PIMG.png">
 	            <img id="PIMG-logo" src="images/pimg-logo-full.png">
 	          </a-assets>
 	          
 	          <a-image src="#PIMG-title" width="12" position="0 5.5 -7.32" rotation="" scale="1.1 2.1 1.1"></a-image>
-	          <a-image src="#PIMG-logo" width="12" position="0 3 -6.72" rotation="" scale="1 1.5 1"></a-image>
+	          <!-- <a-image src="#PIMG-logo" width="12" position="0 3 -6.72" rotation="" scale="1 1.5 1"></a-image> -->
 	          
 	          
 	            <a-entity position="0 0.75 0" camera look-controls wasd-controls>
@@ -151,4 +149,3 @@
     </main>
   </body>
 </html>
-
