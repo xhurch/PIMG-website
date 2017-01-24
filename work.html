@@ -4,6 +4,9 @@
 	<head>
 		<title>PIMG</title>
 		<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="js/aframe-animation-component.js"></script>
+    <script src="js/aframe-hyperlink.js"></script>
+    <script src="js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script>
 		<link rel="stylesheet" type="text/css" href="PIMG.css">
 	</head>
   <body>
@@ -56,14 +59,26 @@
 	      	
 	        <a-scene vr-mode-ui="enabled: true">
 	          <a-assets>
-	            <video id="vid" src="vids/templ5-360.mp4" autoplay loop crossorigin></video>
+		          <a-asset-item id="nav-jewel" src="3D/nav-jewel-green.dae"></a-asset-item>  
+		          <video id="vid" src="vids/templ5-360.mp4" autoplay loop crossorigin></video>
 	            <img id="PIMG-title" src="images/PIMG.png">
 	            <img id="PIMG-logo" src="images/pimg-logo-full.png">
 	          </a-assets>
 	          
+            <a-entity id="link-box" position="0 100 -420" scale="10 10 10" rotate="0 0 0" geometry="box" href="neko.html">
+              <a-animation attribute="rotation"
+                       dur="10000"
+                       fill="forwards"
+                       to="0 360 0"
+                       repeat="indefinite"></a-animation>
+            </a-entity>
+
+
 	          <a-image src="#PIMG-title" width="10" position="0 3.7 -7.32" rotation="" scale="1 2 1"></a-image>
-	          <!-- <a-image src="#PIMG-logo" width="12" position="0 3 -6.72" rotation="" scale="1 1.5 1"></a-image> -->
-	          
+		        <a-entity collada-model="#nav-jewel" position="1 1 1" rotation="0 0 0" scale="55 55 55"></a-entity>
+		 <!-- <a-image src="#PIMG-logo" width="12" position="0 3 -6.72" rotation="" scale="1 1.5 1"></a-image> -->
+
+
 	          
 	            <a-entity position="0 0.75 0" camera look-controls wasd-controls>
 	              <a-cursor material="color: yellow; shader: flat"></a-cursor>
